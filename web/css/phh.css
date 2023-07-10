@@ -1,0 +1,444 @@
+html {
+    font-size: 62.5%;
+    /*đặt font 62.5% tương đương là 10px*/
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+* {
+    margin: 0;
+    /*reset margin và padding về 0 vì mặc định không phải không*/
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clear {
+    clear: both;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+}
+
+.header__inner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    background: #fff;
+    z-index: 3;
+}
+
+.logo {
+    width: 17rem;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    z-index: 3;
+}
+
+.menu__item {
+    /* margin-left: 1rem; */
+    position: relative;
+    /*cái này là giúp cố định vị trí phần tử khi trỏ tới */
+}
+
+.menu__link:hover {
+    color: #00c4cc;
+    border-bottom: 3px solid #00c4cc;
+}
+
+.menu__link__child:hover {
+    color: #00c4cc;
+}
+
+.menu__item:hover .menu__child {
+    opacity: 1;
+    /*opaccity 1 là hiện lên luôn độ mờ đậm nhất*/
+    visibility: visible;
+    /*giúp các phần từ hiện trên màn hình*/
+}
+
+.menu__child {
+    position: absolute;
+    /*còn cái này thì ngược lại giúp sổ ra cái menu á*/
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    display: inline-block;
+    /*tác dụng cho các thẻ li nằm trên 1 đường thẳng*/
+    /*có thẻ dùng display none nhưng khi dùng nó thì khôgn thể dùng transition*/
+    opacity: 0;
+    /*opacity là độ mờ có từ 0 - 0.5 - 1*/
+    visibility: hidden;
+    /*giúp các phần từ không hiện trên màn hình*/
+    transition: 0.25s linear;
+    /*hiệu ứng á*/
+}
+
+.menu__child-list li {
+    list-style-type: none;
+    /*làm mất dấu chấm*/
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+    text-decoration: none;
+}
+
+.menu__link {
+    color: black;
+    text-transform: uppercase;
+    /*viết in đậm*/
+    text-decoration: none;
+    /*định dạng văn bản thường bỏ ra thì bị gạch dưới */
+    font-size: 1.4rem;
+    display: block;
+    /*giúp các phần từ cố định riêng biệt trên 1 hàng dọc*/
+    padding: 20px 10px 20px 10px;
+    margin-right: 10px;
+}
+
+.menu__link__child {
+    color: black;
+    text-transform: uppercase;
+    /*viết in đậm*/
+    text-decoration: none;
+    /*định dạng văn bản thường bỏ ra thì bị gạch dưới */
+    font-size: 1rem;
+    display: block;
+    /*giúp các phần từ cố định riêng biệt trên 1 hàng dọc*/
+}
+
+/* css banner */
+.banner {
+    margin-top: 100px;
+    height: 200px;
+    background-image: linear-gradient(0, rgba(61, 192, 172, 0.5), rgba(61, 192, 172, 0.5)), url(image/photo-1582407947304-fd86f028f716.avif);
+    background-size: 100% 100%;
+}
+
+.banner .banner-heading {
+    padding: 84px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    font-style: oblique;
+}
+
+.banner .banner-text {
+    font-weight: 500;
+
+}
+
+/* css slider */
+.slider {
+    height: 485px;
+    width: 1000px;
+    margin: 15px auto;
+    background-color: black;
+    position: relative;
+    display: block;
+}
+
+.slider-next,
+.slider-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 100rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 2;
+}
+
+.slider-next {
+    right: -25px;
+}
+
+.slider-prev {
+    left: -25px;
+}
+
+.fa-angle-left:before {
+    margin-left: 10px;
+}
+
+.fa-angle-right::before {
+    margin-left: 12px;
+}
+
+.slider-dots {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    z-index: 10;
+}
+
+.slider-dots li {
+    margin: 0 10px;
+    width: 15px;
+    height: 15px;
+    border-radius: 100rem;
+    background-color: #999;
+    cursor: pointer;
+    transition: background-color 0.25s linear;
+}
+
+.slider-dots li.active {
+    background-color: white;
+}
+
+.slider-wrapper {
+    width: 100%;
+    height: 485px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-main {
+    display: flex;
+    position: relative;
+    transition: transform 0.25s linear;
+    height: 485px;
+}
+
+.slider-item {
+    height: 100%;
+    width: 485px;
+    flex: 1 0 100%;
+    user-select: none;
+}
+
+.slider-item img {
+    width: 100%;
+    height: 485px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* css content */
+.content-information {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    padding: 30px 20px;
+    border: #ebebeb outset 2px;
+    margin-bottom: 30px;
+}
+
+.content-information .in-heading {
+    background-color: #fff;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    border-bottom: solid 2px #ebebeb;
+    margin-bottom: 15px;
+}
+
+.in-heading .home-price {
+    color: #00c4cc;
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.home-adrees::before {
+    content: "\f041";
+    font-family: 'FontAwesome';
+    padding-right: 5px;
+    color: red;
+    font-size: 24px;
+
+}
+
+.home-sleep::before {
+    content: "\f236";
+    font-family: 'FontAwesome';
+    padding-right: 5px;
+    color: #00c4cc;
+}
+
+.home-shower::before {
+    content: "\f2cc";
+    font-family: 'FontAwesome';
+    padding-right: 5px;
+    color: #00c4cc;
+}
+
+.home-area::before {
+    content: "\f047";
+    font-family: 'FontAwesome';
+    padding-right: 5px;
+    color: #00c4cc;
+}
+
+.home-price::before {
+    content: "\f155 ";
+    font-family: 'FontAwesome';
+    padding-right: 5px;
+    color: #00c4cc;
+}
+
+.content-about .about-heading {
+    font-size: 25px;
+    line-height: 40px;
+    font-weight: 700;
+    margin: 0 0 15px;
+    padding-right: 150px;
+    font-family: 'FontMuli';
+}
+
+.content-about .home-about {
+    width: 60%;
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+.content-about .home-adrees {
+
+    margin: unset;
+    font-size: 18px;
+}
+.content-about .home-contact {
+
+    font-size: 18px;
+    margin-top: 12px;
+}
+.content-about .home-name {
+
+    font-size: 18px;
+    margin-top: 12px;
+}
+
+
+
+.btn-contact {
+    padding-top: 100px;
+    padding-left: 300px;
+}
+
+.content-about .contact {
+    height: 60px;
+    width: 27%;
+    background-color: #00c4cc;
+    font-size: 21px;
+    border: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+    transition: ease 0.5s
+}
+
+.contact::before {
+    content: "";
+    font-family: 'FontAwesome';
+    padding-right: 10px;
+    color: #fff
+}
+
+.contact:hover {
+    background-color: #06aaaf;
+
+}
+
+
+
+.content-about .status {
+    height: 60px;
+    width: 27%;
+    background-color: #00c4cc;
+    font-size: 21px;
+    border: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+    transition: ease 0.5s;
+    display: flexbox;
+
+}
+
+
+
+.status:hover {
+    background-color: #06aaaf;
+
+
+}
+
+.overview {
+    height: 450px;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    padding: 30px 20px;
+    border: #ebebeb outset 2px;
+    margin-bottom: 30px;
+}
+
+.overview .over-heading {
+    height: 70px;
+    margin-bottom: 15px;
+    border-bottom: solid 2px #ebebeb;
+}
+
+.over-heading h3 {
+    font-size: 30px;
+    padding: 0 0 15px;
+    font-family: 'FontMuli';
+    font-weight: 700;
+}
+
+.overview-about .about-content {
+    font-size: 25px;
+    padding-top: 30px;
+}
+
+.map {
+    height: 500px;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    padding: 30px 20px;
+    border: #ebebeb outset 2px;
+    margin-bottom: 30px;
+}
+
+.map-heading h3 {
+    font-size: 30px;
+    padding: 0 0 15px;
+    font-family: 'FontMuli';
+    font-weight: 700;
+}
+
+.map .map-heading {
+    height: 50px;
+    margin-bottom: 15px;
+    border-bottom: solid 2px #ebebeb;
+}
