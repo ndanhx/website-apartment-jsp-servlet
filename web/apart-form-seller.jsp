@@ -55,7 +55,7 @@
                     <h3 class="text-center">Chỉnh sửa Căn hộ</h3>
                     
                     
-                    <form action="UpdateApartmentBySeller" method="post">
+                    <form action="UpdateApartmentBySeller" method="POST">
                         
                         <fieldset class="form-group">
                             <label>ID căn hộ</label> 
@@ -90,7 +90,7 @@
                             <label>Giá tiền</label> 
                             <input type="text"
                                    value="${canho.getGiaTien()}"   class="form-control"
-                                   name="giatien" required="required">
+                                   name="giatien" required="required" min="1">
                         </fieldset>
                         <fieldset class="form-group">
                             <label>Mô tả</label> 

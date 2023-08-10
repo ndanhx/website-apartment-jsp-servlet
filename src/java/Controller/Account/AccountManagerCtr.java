@@ -48,6 +48,8 @@ public class AccountManagerCtr extends HttpServlet {
         request.setAttribute("listUser", listac);
         request.setAttribute("endPage", endPage);
         request.getRequestDispatcher("user-list.jsp").forward(request, response);
+        
+        
            
     }
 

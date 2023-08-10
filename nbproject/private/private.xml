@@ -3,8 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Desktop/DoAnWeb_ChuyenNganh2/DangTinThueDangHo/web/user-profile.jsp</file>
-            <file>file:/D:/Desktop/DoAnWeb_ChuyenNganh2/DangTinThueDangHo/web/Home.jsp</file>
+            <file>file:/D:/NGUYEN-DUY-ANH/HIU/DoAnWeb_ChuyenNganh2/Source/DangTinThueDangHo/src/java/Controller/Account/DeleteAccount.java</file>
+            <file>file:/D:/NGUYEN-DUY-ANH/HIU/DoAnWeb_ChuyenNganh2/Source/DangTinThueDangHo/src/java/Model/Account.java</file>
+            <file>file:/D:/NGUYEN-DUY-ANH/HIU/DoAnWeb_ChuyenNganh2/Source/DangTinThueDangHo/src/java/Controller/Profile/UserProfile.java</file>
+            <file>file:/D:/NGUYEN-DUY-ANH/HIU/DoAnWeb_ChuyenNganh2/Source/DangTinThueDangHo/src/java/Controller/Account/GetThongTin_NAPTIEN.java</file>
+            <file>file:/D:/NGUYEN-DUY-ANH/HIU/DoAnWeb_ChuyenNganh2/Source/DangTinThueDangHo/web/Home.jsp</file>
+            <file>file:/D:/NGUYEN-DUY-ANH/HIU/DoAnWeb_ChuyenNganh2/Source/DangTinThueDangHo/src/java/Controller/Account/AccountCtr.java</file>
+            <file>file:/D:/NGUYEN-DUY-ANH/HIU/DoAnWeb_ChuyenNganh2/Source/DangTinThueDangHo/src/java/Controller/BaiDangByAddress.java</file>
         </group>
     </open-files>
 </project-private>
